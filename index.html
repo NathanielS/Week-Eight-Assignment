@@ -50,10 +50,21 @@ function runit() {
 import turtle
 t = turtle.Turtle()
 
-for c in ["red","green","blue","yellow","orange"]:
-    t.color(c)
-    t.forward(100)
-    t.left(144)
+x = int (input("Enter the number of sides for the polygon (must be greater than 2 and less than 25): "))
+
+if x < 25:
+    if x > 2:
+        y = 180 - (((x - 2) * 180) / x)
+        z = 0
+        l = 25
+        for z in range(x):
+            t.color("green")
+            t.forward(l)
+            t.left(y)
+    else:
+        print("Error: number must be greater than 2")
+else:
+    print("Error: number must be less than 25")
 
 </textarea><br /> 
 <button type="button" onclick="runit()">Run</button> 
